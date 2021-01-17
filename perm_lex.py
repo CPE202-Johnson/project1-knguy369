@@ -7,7 +7,9 @@ returns a list of strings where each string represents a permutation of the inpu
 
 def perm_gen_lex(a):
     all_perms = []
-    if a == "": #base case
+    if len(a) == 0: #base case
+        return []
+    elif len(a) == 1: #base case
         return [a]
     for i in range(len(a)): #reduction
         first = a[i]
@@ -16,7 +18,6 @@ def perm_gen_lex(a):
         for x in range(len(temp_perm)): #for each permutation
             all_perms.append(first + temp_perm[x]) #combine
     return all_perms
-
 
 
 
