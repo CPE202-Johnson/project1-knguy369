@@ -16,9 +16,9 @@ def bears(n):
      if n < 42  : #base case
         return False
      elif n % 2 == 0 and bears(int(n / 2)) is True: #reduces n only if possible
-           return True
+           return bears(int(n / 2))
      elif n % 5 == 0 and bears(n - 42) is True:
-           return True
+           return bears(n - 42)
      elif n % 3 or n % 4 == 0:
         test_n = str(n)
         prod = int(test_n[-1]) * int(test_n[-2])
@@ -28,7 +28,7 @@ def bears(n):
         if test_n == 42:
             return True
         if bears(test_n) is True:
-            return True
+            return bears(test_n)
      return False #only if no other paths are possible
 
 
