@@ -5,9 +5,6 @@ returns True if possible to win game with n bears and False otherwise
 """
 
 
-
-
-
 def bears(n):
     """A True return value means that it is possible to win
     the bear game by starting with n bears. A False return value means
@@ -17,9 +14,9 @@ def bears(n):
         return True
     if n < 42: #base case
         return False
-    else:
+    elif n % 2 == 0 or n % 3 == 0 or n % 4 == 0 or n % 5 == 0:
         if n % 2 == 0:
-            test_n = int(n / 2)
+            test_n = n // 2
             if bears(test_n) is True:
                 return True
         if n % 5 == 0:
